@@ -1,0 +1,74 @@
+.container {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.titleId {
+  display: flex;
+  color: grey;
+}
+
+.userImage {
+  width: 30px;
+  height: 30px;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.detailsWrap {
+  display: flex;
+}
+
+.details {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  outline: 1px solid rgb(236, 227, 227);
+  margin-right: 20px;
+}
+
+.exclamationMark {
+  width: 20px;
+  height: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  color: white;
+  border-radius: 2px;
+}
+
+.tagWrap {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-right: 10px;
+}
+
+.detail {
+  color: grey;
+}
