@@ -1,7 +1,12 @@
 import './App.css';
+import Home from './components/Home/Home';
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <main>
+      <Home />
+    </main>
+  );
 };
 
 export default App;
