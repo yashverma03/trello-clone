@@ -1,4 +1,5 @@
 import Card from '../Card/Card';
+import DisplayModal from '../DisplayModal/DisplayModal';
 import styles from './Home.module.css';
 
 const temp = {
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <main className={container}>
+      <DisplayModal />
       <Card id={temp.id} title={temp.title} tag={temp.tag} />
     </main>
   );
