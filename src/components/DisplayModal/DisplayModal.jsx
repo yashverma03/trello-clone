@@ -5,8 +5,7 @@ import dropdownArrow from '../../assets/dropdownArrow.png';
 import capitalCase from '../../utils/util';
 
 const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOrderingChange }) => {
-  const { container, button, image, text, dropdown, section, options, label, select, option } =
-    styles;
+  const { container, button, text, dropdown, section, options, label, select } = styles;
 
   const [showOptions, setShowOptions] = useState(false);
   const [grouping, setGrouping] = useState(initialGrouping);
@@ -36,7 +35,7 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
   return (
     <main className={container}>
       <button className={button} type='button' onClick={toggleDisplay}>
-        <img className={image} src={slider} alt='slider' />
+        <img src={slider} alt='slider' />
         <p className={text}>Display</p>
         <img className={dropdown} src={dropdownArrow} alt='dropdown arrow' />
       </button>
@@ -47,7 +46,7 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
             <p className={label}>Grouping</p>
             <select className={select} onChange={handleGroupingChange} value={grouping}>
               {groupingOptions.map((id) => (
-                <option className={option} key={id} value={id}>
+                <option key={id} value={id}>
                   {capitalCase(id)}
                 </option>
               ))}
@@ -58,7 +57,7 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
             <p className={label}>Ordering</p>
             <select className={select} onChange={handleOrderingChange} value={ordering}>
               {orderingOptions.map((id) => (
-                <option className={option} key={id} value={id}>
+                <option key={id} value={id}>
                   {capitalCase(id)}
                 </option>
               ))}

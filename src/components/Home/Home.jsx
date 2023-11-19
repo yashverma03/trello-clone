@@ -23,11 +23,11 @@ const Home = () => {
     headingImage
   } = styles;
 
-  const intialGrouping = getData(localStorageKey.grouping) ?? 'status';
-  const intialOrdering = getData(localStorageKey.ordering) ?? 'priority';
+  const initialGrouping = getData(localStorageKey.grouping) ?? 'status';
+  const initialOrdering = getData(localStorageKey.ordering) ?? 'priority';
 
-  const [grouping, setGrouping] = useState(intialGrouping);
-  const [ordering, setOrdering] = useState(intialOrdering);
+  const [grouping, setGrouping] = useState(initialGrouping);
+  const [ordering, setOrdering] = useState(initialOrdering);
   const [kanbanData, setKanbanData] = useState(null);
 
   useEffect(() => {
@@ -146,8 +146,8 @@ const Home = () => {
   return (
     <main className={container}>
       <DisplayModal
-        initialGrouping={intialGrouping}
-        initialOrdering={intialOrdering}
+        initialGrouping={initialGrouping}
+        initialOrdering={initialOrdering}
         onGroupingChange={handleGroupingChange}
         onOrderingChange={handleOrderingChange}
       />

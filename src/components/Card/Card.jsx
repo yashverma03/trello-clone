@@ -21,7 +21,6 @@ const Card = ({ item }) => {
   } = styles;
 
   const { id, title, tag } = item;
-
   const grouping = getData(localStorageKey.grouping) ?? 'status';
 
   const getFormattedString = (inputString) => {

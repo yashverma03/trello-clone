@@ -25,9 +25,6 @@
   background-color: rgb(232, 227, 227);
 }
 
-/* .image {
-} */
-
 .text {
   font-weight: 600;
   color: rgb(45, 43, 43);
@@ -75,9 +72,6 @@
 .select:focus {
   outline: none;
 }
-
-/* .option {
-} */
 
 @media screen and (max-width: 430px) {
   .section {
