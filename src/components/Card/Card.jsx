@@ -24,6 +24,16 @@ const Card = ({ item }) => {
 
   const grouping = getData(localStorageKey.grouping) ?? 'status';
 
+  const getFormattedString = (inputString) => {
+    const maxStringSize = 70;
+
+    if (inputString.length <= maxStringSize) {
+      return inputString;
+    }
+
+    return `${inputString.substring(0, maxStringSize)}...`;
+  };
+
   return (
     <main className={container}>
       <div className={titleWrap}>
@@ -33,7 +43,7 @@ const Card = ({ item }) => {
 
       <div className={descriptionWrap}>
         {grouping !== 'status' && <img className={circleImage} src={circle} alt='circle' />}
-        <div className={description}>{title}</div>
+        <div className={description}>{getFormattedString(title)}</div>
       </div>
 
       <div className={detailsWrap}>

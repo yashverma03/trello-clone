@@ -5,8 +5,8 @@
 
 .article {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  column-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 10px;
   row-gap: 60px;
 }
 
@@ -14,7 +14,7 @@
   height: 100px;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 20px 10px 0 20px;
 }
 
 .headingItem1 {
@@ -46,7 +46,7 @@
   margin-right: 10px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .article {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
