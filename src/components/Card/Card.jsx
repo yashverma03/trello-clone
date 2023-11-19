@@ -1,7 +1,7 @@
 import styles from './Card.module.css';
 import userIcon from '../../assets/userIcon.png';
 
-const Card = ({ id, title, tag }) => {
+const Card = ({ item }) => {
   const {
     container,
     titleWrap,
@@ -15,6 +15,8 @@ const Card = ({ id, title, tag }) => {
     circle,
     detail
   } = styles;
+
+  const { id, title, tag } = item;
 
   return (
     <main className={container}>
