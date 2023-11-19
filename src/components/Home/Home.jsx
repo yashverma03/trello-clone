@@ -4,6 +4,9 @@ import DisplayModal from '../DisplayModal/DisplayModal';
 import styles from './Home.module.css';
 import plus from '../../assets/plus.svg';
 import ellipsis from '../../assets/ellipsis.svg';
+import signal from '../../assets/signal.svg';
+import circle from '../../assets/circle.svg';
+import userIcon from '../../assets/userIcon.png';
 import { getData, localStorageKey, setData } from '../../utils/localStorageAPI';
 import capitalCase from '../../utils/util';
 import getKanbanData from '../../utils/api';
@@ -104,6 +107,16 @@ const Home = () => {
   getGroupedData();
   getOrderdedData();
 
+  const getSource = () => {
+    if (grouping === 'status') {
+      return circle;
+    }
+    if (grouping === 'priority') {
+      return signal;
+    }
+    return userIcon;
+  };
+
   const getDisplayItem = (item) => {
     const priorityItems = {
       0: 'No priority',
@@ -144,6 +157,7 @@ const Home = () => {
           <section key={items}>
             <div className={headingItems}>
               <div className={headingItem1}>
+                <img className={headingImage} src={getSource()} alt='icon' />
                 <h1 className={headingName}>{getDisplayItem(items)}</h1>
                 <p className={headingNumber}>{groupingData[grouping][items].length}</p>
               </div>
