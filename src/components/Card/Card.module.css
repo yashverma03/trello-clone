@@ -1,4 +1,5 @@
 .container {
+  max-width: 500px;
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
@@ -71,4 +72,14 @@
 
 .detail {
   color: grey;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
