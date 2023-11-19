@@ -2,18 +2,15 @@ import { useState } from 'react';
 import styles from './DisplayModal.module.css';
 import slider from '../../assets/slider.svg';
 import dropdownArrow from '../../assets/dropdownArrow.png';
-import { getData, localStorageKey, setData } from '../../utils/localStorageAPI';
+import capitalCase from '../../utils/util';
 
-const DisplayModal = () => {
+const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOrderingChange }) => {
   const { container, button, image, text, dropdown, section, options, label, select, option } =
     styles;
 
-  const intialGrouping = getData(localStorageKey.grouping) ?? 'Status';
-  const intialOrdering = getData(localStorageKey.ordering) ?? 'Priority';
-
   const [showOptions, setShowOptions] = useState(false);
-  const [grouping, setGrouping] = useState(intialGrouping);
-  const [ordering, setOrdering] = useState(intialOrdering);
+  const [grouping, setGrouping] = useState(initialGrouping);
+  const [ordering, setOrdering] = useState(initialOrdering);
 
   const toggleDisplay = () => {
     setShowOptions((prev) => !prev);
@@ -23,18 +20,18 @@ const DisplayModal = () => {
     const { value } = event.target;
 
     setGrouping(value);
-    setData(localStorageKey.grouping, value);
+    onGroupingChange(value);
   };
 
   const handleOrderingChange = (event) => {
     const { value } = event.target;
 
     setOrdering(value);
-    setData(localStorageKey.ordering, value);
+    onOrderingChange(value);
   };
 
-  const groupingOptions = ['Status', 'User', 'Priority'];
-  const orderingOptions = ['Priority', 'Title'];
+  const groupingOptions = ['status', 'user', 'priority'];
+  const orderingOptions = ['priority', 'title'];
 
   return (
     <main className={container}>
@@ -51,7 +48,7 @@ const DisplayModal = () => {
             <select className={select} onChange={handleGroupingChange} value={grouping}>
               {groupingOptions.map((id) => (
                 <option className={option} key={id} value={id}>
-                  {id}
+                  {capitalCase(id)}
                 </option>
               ))}
             </select>
@@ -62,7 +59,7 @@ const DisplayModal = () => {
             <select className={select} onChange={handleOrderingChange} value={ordering}>
               {orderingOptions.map((id) => (
                 <option className={option} key={id} value={id}>
-                  {id}
+                  {capitalCase(id)}
                 </option>
               ))}
             </select>
