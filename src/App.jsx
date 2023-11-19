@@ -2,11 +2,7 @@ import './App.css';
 import Home from './components/Home/Home';
 
 const App = () => {
-  return (
-    <main>
-      <Home />
-    </main>
-  );
+  return <Home />;
 };
 
 export default App;
