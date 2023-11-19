@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "arrow-body-style": "off",
+    "linebreak-style": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/prop-types": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off"
+  }
+}
