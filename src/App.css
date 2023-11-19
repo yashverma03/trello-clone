@@ -13,3 +13,8 @@
     'Helvetica Neue';
   font-weight: 400;
 }
+
+body {
+  background-color: rgb(230, 244, 250);
+  overflow-x: hidden;
+}
