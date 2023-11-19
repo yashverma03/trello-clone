@@ -19,5 +19,6 @@
     "react/prop-types": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off"
-  }
+  },
+  "ignorePatterns": ["*.config.*"]
 }
