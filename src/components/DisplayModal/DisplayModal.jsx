@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styles from './DisplayModal.module.css';
-import slider from '../../assets/slider.svg';
-import dropdownArrow from '../../assets/dropdownArrow.png';
+import { sliderIcon, dropdownArrowIcon } from '../../assets/index';
 import capitalCase from '../../utils/util';
 
 const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOrderingChange }) => {
@@ -35,9 +34,9 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
   return (
     <main className={container}>
       <button className={button} type='button' onClick={toggleDisplay}>
-        <img src={slider} alt='slider' />
+        <img src={sliderIcon} alt='sliderIcon' />
         <p className={text}>Display</p>
-        <img className={dropdown} src={dropdownArrow} alt='dropdown arrow' />
+        <img className={dropdown} src={dropdownArrowIcon} alt='dropdown arrow' />
       </button>
 
       {showOptions && (

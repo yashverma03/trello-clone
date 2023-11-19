@@ -1,6 +1,5 @@
 import styles from './Card.module.css';
-import userIcon from '../../assets/userIcon.png';
-import circle from '../../assets/circle.svg';
+import { userIcon, circleIcon } from '../../assets/index';
 import { getData, localStorageKey } from '../../utils/localStorageAPI';
 
 const Card = ({ item }) => {
@@ -41,7 +40,7 @@ const Card = ({ item }) => {
       </div>
 
       <div className={descriptionWrap}>
-        {grouping !== 'status' && <img className={circleImage} src={circle} alt='circle' />}
+        {grouping !== 'status' && <img className={circleImage} src={circleIcon} alt='circleIcon' />}
         <div className={description}>{getFormattedString(title)}</div>
       </div>
 

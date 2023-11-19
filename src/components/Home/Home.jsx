@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
+import styles from './Home.module.css';
+import { plusIcon, ellipsisIcon, signalIcon, circleIcon, userIcon } from '../../assets/index';
 import Card from '../Card/Card';
 import DisplayModal from '../DisplayModal/DisplayModal';
-import styles from './Home.module.css';
-import plus from '../../assets/plus.svg';
-import ellipsis from '../../assets/ellipsis.svg';
-import signal from '../../assets/signal.svg';
-import circle from '../../assets/circle.svg';
-import userIcon from '../../assets/userIcon.png';
 import { getData, localStorageKey, setData } from '../../utils/localStorageAPI';
 import capitalCase from '../../utils/util';
 import getKanbanData from '../../utils/api';
@@ -109,10 +105,10 @@ const Home = () => {
 
   const getSource = () => {
     if (grouping === 'status') {
-      return circle;
+      return circleIcon;
     }
     if (grouping === 'priority') {
-      return signal;
+      return signalIcon;
     }
     return userIcon;
   };
@@ -162,8 +158,8 @@ const Home = () => {
                 <p className={headingNumber}>{groupingData[grouping][items].length}</p>
               </div>
               <div className={headingItem2}>
-                <img className={headingImage} src={plus} alt='plus' />
-                <img className={headingImage} src={ellipsis} alt='ellipsis' />
+                <img className={headingImage} src={plusIcon} alt='plusIcon' />
+                <img className={headingImage} src={ellipsisIcon} alt='ellipsisIcon' />
               </div>
             </div>
 
