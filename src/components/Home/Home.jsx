@@ -55,7 +55,7 @@ const Home = () => {
     return users;
   };
 
-  const groupingData = {
+  const initialGroupedData = {
     status: {
       Backlog: [],
       Todo: [],
@@ -73,7 +73,7 @@ const Home = () => {
     user: getUsers()
   };
 
-  const getGroupedData = () => {
+  const getGroupedData = (groupedData) => {
     kanbanData?.tickets.forEach((ticket) => {
       const { id, title, tag, userId, status, priority } = ticket;
       const item = { id, title, tag };
@@ -86,22 +86,28 @@ const Home = () => {
         property = userId;
       }
 
-      groupingData[grouping][property].push(item);
+      groupedData[grouping][property].push(item);
     });
   };
 
-  const getOrderdedData = () => {
-    Object.keys(groupingData[grouping]).forEach((items) => {
+  const getOrderdedData = (groupedData) => {
+    Object.keys(groupedData[grouping]).forEach((items) => {
       if (ordering === 'title') {
-        groupingData[grouping][items].sort((a, b) => a.title.localeCompare(b.title));
+        groupedData[grouping][items].sort((a, b) => a.title.localeCompare(b.title));
       } else {
-        groupingData[grouping][items].sort((a, b) => a.priority - b.priority);
+        groupedData[grouping][items].sort((a, b) => a.priority - b.priority);
       }
     });
   };
 
-  getGroupedData();
-  getOrderdedData();
+  const getUpdatedGroupedData = (groupedData) => {
+    getGroupedData(groupedData);
+    getOrderdedData(groupedData);
+
+    return groupedData;
+  };
+
+  const updatedGroupedData = getUpdatedGroupedData(initialGroupedData);
 
   const getSource = () => {
     if (grouping === 'status') {
@@ -149,13 +155,13 @@ const Home = () => {
       />
 
       <article className={article}>
-        {Object.keys(groupingData[grouping]).map((items) => (
+        {Object.keys(updatedGroupedData[grouping]).map((items) => (
           <section key={items}>
             <div className={headingItems}>
               <div className={headingItem1}>
                 <img className={headingImage} src={getSource()} alt='icon' />
                 <h1 className={headingName}>{getDisplayItem(items)}</h1>
-                <p className={headingNumber}>{groupingData[grouping][items].length}</p>
+                <p className={headingNumber}>{updatedGroupedData[grouping][items].length}</p>
               </div>
               <div className={headingItem2}>
                 <img className={headingImage} src={plusIcon} alt='plusIcon' />
@@ -163,7 +169,7 @@ const Home = () => {
               </div>
             </div>
 
-            {groupingData[grouping][items].map((item) => (
+            {updatedGroupedData[grouping][items].map((item) => (
               <Card key={item.id} item={item} />
             ))}
           </section>
