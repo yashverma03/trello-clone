@@ -24,13 +24,25 @@
   height: 30px;
 }
 
+.descriptionWrap {
+  display: flex;
+  align-items: center;
+}
+
+.circleImage {
+  padding-right: 10px;
+}
+
 .description {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
   font-size: 18px;
   font-weight: 500;
 }
 
 .detailsWrap {
+  margin-top: 10px;
   display: flex;
 }
 
@@ -62,7 +74,7 @@
   align-items: center;
 }
 
-.circle {
+.circleShape {
   width: 20px;
   height: 20px;
   border-radius: 50%;

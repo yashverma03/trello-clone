@@ -1,5 +1,7 @@
 import styles from './Card.module.css';
 import userIcon from '../../assets/userIcon.png';
+import circle from '../../assets/circle.svg';
+import { getData, localStorageKey } from '../../utils/localStorageAPI';
 
 const Card = ({ item }) => {
   const {
@@ -7,33 +9,42 @@ const Card = ({ item }) => {
     titleWrap,
     titleId,
     userImage,
+    descriptionWrap,
+    circleImage,
     description,
     detailsWrap,
     details,
     exclamationMark,
     tagWrap,
-    circle,
+    circleShape,
     detail
   } = styles;
 
   const { id, title, tag } = item;
 
+  const grouping = getData(localStorageKey.grouping) ?? 'status';
+
   return (
     <main className={container}>
       <div className={titleWrap}>
         <p className={titleId}>{id}</p>
-        <img className={userImage} src={userIcon} alt='user icon' />
+        {grouping !== 'user' && <img className={userImage} src={userIcon} alt='user icon' />}
       </div>
 
-      <div className={description}>{title}</div>
+      <div className={descriptionWrap}>
+        {grouping !== 'status' && <img className={circleImage} src={circle} alt='circle' />}
+        <div className={description}>{title}</div>
+      </div>
 
       <div className={detailsWrap}>
-        <div className={details}>
-          <p className={exclamationMark}>!</p>
-        </div>
+        {grouping !== 'priority' && (
+          <div className={details}>
+            <p className={exclamationMark}>!</p>
+          </div>
+        )}
         <div className={details}>
           <div className={tagWrap}>
-            <div className={circle} />
+            <div className={circleShape} />
             <p className={detail}>{tag[0]}</p>
           </div>
         </div>
