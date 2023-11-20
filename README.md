@@ -7,7 +7,8 @@
 - Build a kanban board that fetches data from an API & display the ticket cards based on grouping and ordering settings. 
 - Cards can be grouped in 3 ways (by status, by user and by priority) and sorted in 2 ways (by priority and by title).
 - All the settings in display modal is stored in local storage & hence the settings are saved even when the user reloads the page.
-- Some icons such as user icon, icon in front of title and icon in front of tag are conditionally rendered depending upon which grouping mode is selected.
+- Some icons such as user icon, icon in front of title (title icon) and icon in front of tag (tag icon) are conditionally rendered depending upon which grouping mode is selected.
+- For simplicity, the same icons have been used for user icon, tag icon and title icon. Icons were taken from `https://fontawesome.com/` and `https://www.flaticon.com/`.
 - The design has been made responsive and the number of columns depends upon the width of the screen.
 - Airbnb style guide has been used for linting.
 - Tech: HTML, CSS, JavaScript and ReactJS.
