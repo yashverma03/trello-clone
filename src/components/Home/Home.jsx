@@ -161,7 +161,7 @@ const Home = () => {
               <div className={headingItem1}>
                 <img className={headingImage} src={getSource()} alt='icon' />
                 <h1 className={headingName}>{getDisplayItem(items)}</h1>
-                <p className={headingNumber}>{updatedGroupedData[grouping][items].length}</p>
+                <h2 className={headingNumber}>{updatedGroupedData[grouping][items].length}</h2>
               </div>
               <div className={headingItem2}>
                 <img className={headingImage} src={plusIcon} alt='plusIcon' />

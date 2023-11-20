@@ -34,17 +34,17 @@ const Card = ({ item }) => {
 
   return (
     <main className={container}>
-      <div className={titleWrap}>
-        <p className={titleId}>{id}</p>
+      <section className={titleWrap}>
+        <h2 className={titleId}>{id}</h2>
         {grouping !== 'user' && <img className={userImage} src={userIcon} alt='user icon' />}
-      </div>
+      </section>
 
-      <div className={descriptionWrap}>
+      <section className={descriptionWrap}>
         {grouping !== 'status' && <img className={circleImage} src={circleIcon} alt='circleIcon' />}
-        <div className={description}>{getFormattedString(title)}</div>
-      </div>
+        <h1 className={description}>{getFormattedString(title)}</h1>
+      </section>
 
-      <div className={detailsWrap}>
+      <section className={detailsWrap}>
         {grouping !== 'priority' && (
           <div className={details}>
             <p className={exclamationMark}>!</p>
@@ -53,10 +53,10 @@ const Card = ({ item }) => {
         <div className={details}>
           <div className={tagWrap}>
             <div className={circleShape} />
-            <p className={detail}>{tag[0]}</p>
+            <h3 className={detail}>{tag[0]}</h3>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 };

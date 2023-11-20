@@ -35,14 +35,14 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
     <main className={container}>
       <button className={button} type='button' onClick={toggleDisplay}>
         <img src={sliderIcon} alt='sliderIcon' />
-        <p className={text}>Display</p>
+        <h1 className={text}>Display</h1>
         <img className={dropdown} src={dropdownArrowIcon} alt='dropdown arrow' />
       </button>
 
       {showOptions && (
         <section className={section}>
           <div className={options}>
-            <p className={label}>Grouping</p>
+            <h2 className={label}>Grouping</h2>
             <select className={select} onChange={handleGroupingChange} value={grouping}>
               {groupingOptions.map((id) => (
                 <option key={id} value={id}>
@@ -53,7 +53,7 @@ const DisplayModal = ({ initialGrouping, initialOrdering, onGroupingChange, onOr
           </div>
 
           <div className={options}>
-            <p className={label}>Ordering</p>
+            <h2 className={label}>Ordering</h2>
             <select className={select} onChange={handleOrderingChange} value={ordering}>
               {orderingOptions.map((id) => (
                 <option key={id} value={id}>
