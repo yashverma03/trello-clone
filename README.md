@@ -1,4 +1,4 @@
-**Deployed link**- https://kanban-board-03.netlify.app
+**Deployed link**- https://trello-clone-eqhq.onrender.com
 
 <br>
 
